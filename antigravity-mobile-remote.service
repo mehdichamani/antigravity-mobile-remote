@@ -1,0 +1,23 @@
+[Unit]
+Description=Antigravity Mobile Remote Server (Standalone LAN Controller)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/unreal/projects/antigravity-mobile-remote
+ExecStart=/home/unreal/.local/share/mise/installs/node/26.7.0/bin/node /home/unreal/projects/antigravity-mobile-remote/dist/cli.js
+Restart=always
+RestartSec=3
+Environment=PORT=7788
+Environment=NODE_ENV=production
+Environment="HTTP_PROXY=socks5h://127.0.0.1:10808"
+Environment="HTTPS_PROXY=socks5h://127.0.0.1:10808"
+Environment="ALL_PROXY=socks5h://127.0.0.1:10808"
+Environment="http_proxy=socks5h://127.0.0.1:10808"
+Environment="https_proxy=socks5h://127.0.0.1:10808"
+Environment="all_proxy=socks5h://127.0.0.1:10808"
+Environment="NO_PROXY=localhost,127.0.0.1,::1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12"
+Environment="no_proxy=localhost,127.0.0.1,::1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12"
+
+[Install]
+WantedBy=default.target

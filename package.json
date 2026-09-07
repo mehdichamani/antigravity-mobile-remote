@@ -1,0 +1,33 @@
+{
+  "name": "antigravity-mobile-remote",
+  "displayName": "Antigravity Mobile Remote",
+  "description": "Standalone cross-platform terminal-based mobile companion for Antigravity with real-time streaming and tool monitoring.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "bin": {
+    "antigravity-remote": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
+    "start": "node dist/cli.js",
+    "dev": "node build.js --watch",
+    "setup": "node scripts/installer.js",
+    "tui": "node scripts/tui.js",
+    "manage": "node scripts/tui.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/qrcode": "^1.5.6",
+    "@types/ws": "^8.18.1",
+    "esbuild": "^0.20.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "ws": "^8.21.3"
+  },
+  "author": "",
+  "type": "commonjs"
+}
